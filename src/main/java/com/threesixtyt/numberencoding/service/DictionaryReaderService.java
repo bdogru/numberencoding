@@ -39,6 +39,9 @@ public class DictionaryReaderService {
 	}
 
 	private void processLine(String line, Map<Integer, List<Node>> dictionary, int i) {
+		if(line.isEmpty()) {
+			return;
+		}
 		Integer key = Encoder.get(line.charAt(i));
 		char nodeValue = line.charAt(i);
 		StringBuffer postfix = new StringBuffer();
