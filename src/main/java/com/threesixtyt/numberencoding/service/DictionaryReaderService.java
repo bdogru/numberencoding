@@ -12,8 +12,18 @@ import com.threesixtyt.numberencoding.config.Encoder;
 import com.threesixtyt.numberencoding.domain.Node;
 import com.threesixtyt.numberencoding.storage.Root;
 
+/**
+ * A class to read the dictionary file, parse all the words and form the
+ * dictionary tree
+ * 
+ * @author Bekir Dogru
+ *
+ */
 public class DictionaryReaderService {
 
+	/**
+	 * Method to begin dictionary parsing process
+	 */
 	public void getDictionaryFromFile() {
 		FileReader fr = null;
 		try {
@@ -38,8 +48,19 @@ public class DictionaryReaderService {
 		}
 	}
 
+	/**
+	 * Takes the line and recursively adds to the dictionary tree
+	 * 
+	 * @param line
+	 *            a word from the dictionary
+	 * @param dictionary
+	 *            a subtree or the root of the dictionary tree
+	 * @param i
+	 *            indicates the index of the first unparsed character of the
+	 *            word
+	 */
 	private void processLine(String line, Map<Integer, List<Node>> dictionary, int i) {
-		if(line.isEmpty()) {
+		if (line.isEmpty()) {
 			return;
 		}
 		Integer key = Encoder.get(line.charAt(i));
