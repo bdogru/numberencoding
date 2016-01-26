@@ -1,6 +1,7 @@
 package com.threesixtyt.numberencoding;
 
-import com.threesixtyt.numberencoding.service.InputReaderService;
+
+import com.threesixtyt.numberencoding.service.DictionaryReaderService;
 
 /**
  * Hello world!
@@ -10,7 +11,7 @@ public class NumberEncoder
 {
     public static void main( String[] args )
     {
-        InputReaderService irs = new InputReaderService();
-        irs.getPiecesFromFile();
+        DictionaryReaderService irs = new DictionaryReaderService();
+        irs.getDictionaryFromFile();
     }
 }

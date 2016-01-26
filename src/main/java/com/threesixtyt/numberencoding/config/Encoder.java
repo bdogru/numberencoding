@@ -4,14 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Encoder {
-	private static Map<Character, Integer> encodingMap;
-	public int get(Character c) {
+	private static Map<Character, Integer> encodingMap = null;
+	public static Integer get(Character c) {
 		if(encodingMap == null) {
 			initializeMap();
 		}
 		return encodingMap.get(c);
 	}
-	private void initializeMap() {
+	private static void initializeMap() {
+		encodingMap = new HashMap<Character, Integer>();
 
 		encodingMap.put('E', 0);
 		encodingMap.put('e', 0);

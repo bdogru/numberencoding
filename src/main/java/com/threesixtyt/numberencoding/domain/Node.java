@@ -2,17 +2,18 @@ package com.threesixtyt.numberencoding.domain;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.List;
 
 public class Node {
 	private char nodeValue;
 	private String postfix;
 	private boolean wordEnd;
 
-	private Map<Integer, Node> next;
+	private Map<Integer, List<Node>> next;
 	
 	public Node(char c ) {
 		nodeValue = c;
-		next = new HashMap<Integer, Node>();
+		next = new HashMap<Integer, List<Node>>();
 	}
 	
 	public String getPostfix() {
@@ -35,7 +36,7 @@ public class Node {
 		return nodeValue;
 	}
 
-	public Map<Integer, Node> getNext() {
+	public Map<Integer, List<Node>> getNext() {
 		return next;
 	}
 }
